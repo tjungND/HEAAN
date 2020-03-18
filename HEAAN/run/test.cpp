@@ -14,7 +14,7 @@
   * There are Encrypt, EncryptSingle, Add, Mult, iMult, RotateFast, Conjugate Tests
   */
 int main(int argc, char **argv) {
-	long logq = 420; ///< Ciphertext Modulus
+	long logq = 198; ///< Ciphertext Modulus
 	long logp = 16; ///< Real message will be quantized by multiplying 2^(log p + 10)
 	long logn = 0; ///< log2(The number of slots)
 	long n = (1 << logn);
@@ -62,34 +62,45 @@ int main(int argc, char **argv) {
 	timeutils.start("Homomorphic Multiplication for 100 times");
 //	timeutils.start("Homomorphic Multiplication");
 	for(long i = 0; i < 100; i++){
-		scheme.multAndEqual(cipher[rand()], cipher[rand()]);
+		scheme.multAndEqual(cipher[rand() % 100], cipher[rand() % 100]);
 	}
 	timeutils.stop("Homomorphic Multiplication for 100 times");	 
-//	timeutils.stop("Homomorphic Multiplication");	
-
+//	timeutils.stop("Homomorphic Multiplication");
     
+    cout << "Avg Mult. time is : " << (timeutils.timeElapsed / 100.0) << "ms" << endl;
+
+
+
 //----------------------------------------------------------------------------------
 //   BOOTSTRAPPING
 //----------------------------------------------------------------------------------
 
-
-    	logq = (logq % logp) + logp; //< suppose the input ciphertext of bootstrapping has logq = logp + 10
+    for(int i = 0; i < 100; i++){
+        scheme.encrypt(cipher[i], mvec, n, logp, logq);
+    }
+    
+    int depth = (logq / logp - 1);
+    int totalq= logq;
+    logq = (logq % logp) + logp + 10; //< suppose the input ciphertext of bootstrapping has logq = logp + 10
 //    	logn = 1; //< larger logn will make bootstrapping tech much slower
-    	long logT = 4; //< this means that we use Taylor approximation in [-1/T,1/T] with double angle fomula
+    long logT = 4; //< this means that we use Taylor approximation in [-1/T,1/T] with double angle fomula
 
 	
 //	cout << "cipher's logq before bootstrapping = " << cipher.logq << endl;
 //	timeutils.start("Bootstrapping");
 	timeutils.start("Bootstrapping for 100 times");
-	int depth = (logq / logp - 1);
-	int totalq= logq;
-	for(long i = 0; i < 1; i++){
-		scheme.bootstrapAndEqual(cipher[rand()], cipher[rand()].logq, logQ, logT);
-		depth += (cipher[rand()].logq / logp - 1);
-		totalq += cipher[rand()].logq;
+	
+	for(long i = 0; i < 100; i++){
+        int j = rand() % 100;
+        cout << "iteration " << i << endl;
+		scheme.bootstrapAndEqual(cipher[j], logq, logQ, logT);
+        
+		depth += (cipher[j].logq / logp - 1);
+		totalq += cipher[j].logq;
 	}
 	timeutils.stop("Bootstrapping for 100 times");
 //	timeutils.stop("Bootstrapping");
+    cout << "Avg Boot. time is : " << (timeutils.timeElapsed / 100.0) << "ms" << endl;
 	cout << "avg depth = " << (depth / 100.0) << endl;
 	cout << "avg logq = " << (totalq / 100.0) << endl;
 
