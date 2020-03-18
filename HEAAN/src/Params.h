@@ -11,8 +11,8 @@
 #include <NTL/ZZ.h>
 using namespace NTL;
 
-static const long logN = 16;
-static const long logQ = 1200;
+static const long logN = 14;
+static const long logQ = 400;
 
 static const double sigma = 3.2;
 static const long h = 64;
