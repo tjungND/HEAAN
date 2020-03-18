@@ -12,7 +12,7 @@
 using namespace NTL;
 
 static const long logN = 14;
-static const long logQ = 600;
+static const long logQ = 559;
 
 static const double sigma = 3.2;
 static const long h = 64;
