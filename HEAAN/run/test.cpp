@@ -84,9 +84,9 @@ int main(int argc, char **argv) {
 	int depth = (logq / logp - 1);
 	int totalq= logq;
 	for(long i = 0; i < 1; i++){
-		scheme.bootstrapAndEqual(cipher, cipher.logq, logQ, logT);
-		depth += (cipher.logq / logp - 1);
-		totalq += cipher.logq;
+		scheme.bootstrapAndEqual(cipher[rand()], cipher[rand()].logq, logQ, logT);
+		depth += (cipher[rand()].logq / logp - 1);
+		totalq += cipher[rand()].logq;
 	}
 	timeutils.stop("Bootstrapping for 100 times");
 //	timeutils.stop("Bootstrapping");
