@@ -66,20 +66,27 @@ int main(int argc, char **argv) {
 	complex<double>* mvec = EvaluatorUtils::randomComplexArray(n);
 
 
-	Ciphertext* cipher = new Ciphertext[100];
-	for(int i = 0; i < 100; i++){
+	Ciphertext* cipher = new Ciphertext[1000];
+	for(int i = 0; i < 1000; i++){
 		scheme.encrypt(cipher[i], mvec, n, logp, logq);
 	}
 
+	cout << cipher[0].logp << endl;
+	scheme.multAndEqual(cipher[0], cipher[1]);
+	cout << cipher[0].logp << endl;
+
+	return 0;
+
 	timeutils.start("Homomorphic Multiplication for 10 times");
 //	timeutils.start("Homomorphic Multiplication");
-	for(long i = 0; i < 10; i++){
-		scheme.multAndEqual(cipher[rand() % 100], cipher[rand() % 100]);
+
+	for(long i = 0; i < 100; i++){
+		scheme.multAndEqual(cipher[rand() % 1000], cipher[rand() % 1000]);
 	}
 	timeutils.stop("Homomorphic Multiplication for 10 times");
 //	timeutils.stop("Homomorphic Multiplication");
     
-    cout << "Avg Mult. time is : " << (timeutils.timeElapsed / 10.0) << "ms" << endl;
+    cout << "Avg Mult. time is : " << (timeutils.timeElapsed / 100.0) << "ms" << endl;
 
 
 
@@ -96,28 +103,28 @@ int main(int argc, char **argv) {
 //    	logn = 1; //< larger logn will make bootstrapping tech much slower
     long logT = 4; //< this means that we use Taylor approximation in [-1/T,1/T] with double angle fomula
     
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i < 1000; i++){
         scheme.encrypt(cipher[i], mvec, n, logp, logq);
     }
     
 	
 //	cout << "cipher's logq before bootstrapping = " << cipher.logq << endl;
 //	timeutils.start("Bootstrapping");
-	timeutils.start("Bootstrapping for 10 times");
+	timeutils.start("Bootstrapping for 5 times");
 	
-	for(long i = 0; i < 1; i++){
-        int j = rand() % 100;
+	for(long i = 0; i < 5; i++){
+        int j = rand() % 1000;
         //cout << "iteration " << i << endl;
 		scheme.bootstrapAndEqual(cipher[j], logq, logQ, logT);
         
 		depth += (cipher[j].logq / logp - 1);
 		totalq += cipher[j].logq;
 	}
-	timeutils.stop("Bootstrapping for 10 times");
+	timeutils.stop("Bootstrapping for 5 times");
 //	timeutils.stop("Bootstrapping");
-    cout << "Avg Boot. time is : " << (timeutils.timeElapsed / 1.0) << "ms" << endl;
-	cout << "avg depth = " << (depth / 1.0) << endl;
-	cout << "avg logq = " << (totalq / 1.0) << endl;
+    cout << "Avg Boot. time is : " << (timeutils.timeElapsed / 5.0) << "ms" << endl;
+	cout << "avg depth = " << (depth / 5.0) << endl;
+	cout << "avg logq = " << (totalq / 5.0) << endl;
     cout << endl;
 
 
