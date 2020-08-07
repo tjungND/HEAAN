@@ -4,4 +4,4 @@ make all;
 cd ../run;
 make clean;
 make;
-./test >> result.txt;
+./test;

@@ -14,7 +14,7 @@
   * There are Encrypt, EncryptSingle, Add, Mult, iMult, RotateFast, Conjugate Tests
   */
 int main(int argc, char **argv) {
-	long logq = 117; ///< Ciphertext Modulus, only needed to change this for Taeho's experiment
+	long logq = 8001; ///< Ciphertext Modulus, only needed to change this for Taeho's experiment
     
     /*
      
@@ -24,16 +24,16 @@ int main(int argc, char **argv) {
     
     
 	long logp = 16; ///< Real message will be quantized by multiplying 2^(log p + 10)
-	long logn = 10; ///< log2(The number of slots)
+	long logn = 1; ///< log2(The number of slots)
 	long n = (1 << logn);
 	srand(time(NULL));
     cout << endl;
 	cout << "message precision = " << logp << endl;
-    	cout << "log(poly-degree, i.e., n) = " << logN << endl;
-    	cout << "log(temporary expansion) = " << logQ << endl;
+    cout << "log(poly-degree, i.e., n) = " << logN << endl;
+    cout << "log(temporary expansion) = " << logQ << endl;
 
 
-    	cout << "log(cipher modulus, i.e., q) = " << logq << endl;
+    cout << "log(cipher modulus, i.e., q) = " << logq << endl;
 	cout << "multiplicative depth = " << (logq / logp - 1) << endl;
 	cout << "# of packed messages = " << n << endl;
 
@@ -117,7 +117,7 @@ int main(int argc, char **argv) {
 	
 	for(long i = 0; i < 2; i++){
         int j = rand() % 100;
-        cout << "iteration " << i << endl;
+        //cout << "iteration " << i << endl;
         //cout << cipher[j].logq << endl;
 		scheme.bootstrapAndEqual(cipher[j], logq, logQ, logT);
         //cout << cipher[j].logq << endl;

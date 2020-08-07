@@ -2,6 +2,10 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
+ifndef VERBOSE
+.SILENT:
+endif
+
 -include ../makefile.init
 
 RM := rm -rf

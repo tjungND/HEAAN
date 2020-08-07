@@ -1,6 +1,11 @@
 # This sample should be run after make libHEAAN.a file in lib folder
 
 # All Target
+
+ifndef VERBOSE
+.SILENT:
+endif
+
 all: clean test
 
 # Tool invocations
