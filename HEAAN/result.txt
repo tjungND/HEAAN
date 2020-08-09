@@ -1,0 +1,251 @@
+Group 1:
+
+message precision = 32
+log(poly-degree, i.e., n) = 10
+log(temporary expansion) = 1660
+log(cipher modulus, i.e., q) = 1001
+multiplicative depth = 30
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 106.181 ms
+------------------
+Avg Mult. time is : 21.2362ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 10338.3 ms
+------------------
+Avg Boot. time is : 5169.14ms
+avg depth = 30
+avg logq = 998
+
+
+message precision = 32
+log(poly-degree, i.e., n) = 11
+log(temporary expansion) = 2660
+log(cipher modulus, i.e., q) = 2001
+multiplicative depth = 61
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 492.325 ms
+------------------
+Avg Mult. time is : 98.465ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 44144.4 ms
+------------------
+Avg Boot. time is : 22072.2ms
+avg depth = 61
+avg logq = 1997
+
+
+message precision = 32
+log(poly-degree, i.e., n) = 12
+log(temporary expansion) = 4660
+log(cipher modulus, i.e., q) = 4001
+multiplicative depth = 124
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 2925.43 ms
+------------------
+Avg Mult. time is : 585.086ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 235281 ms
+------------------
+Avg Boot. time is : 117641ms
+avg depth = 123
+avg logq = 3996
+
+
+message precision = 32
+log(poly-degree, i.e., n) = 12
+log(temporary expansion) = 8660
+log(cipher modulus, i.e., q) = 8001
+multiplicative depth = 249
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 8732.75 ms
+------------------
+Avg Mult. time is : 1746.55ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 705380 ms
+------------------
+Avg Boot. time is : 352690ms
+avg depth = 248
+avg logq = 7996
+
+
+
+
+
+Group 2:
+
+message precision = 32
+log(poly-degree, i.e., n) = 12
+log(temporary expansion) = 1660
+log(cipher modulus, i.e., q) = 1001
+multiplicative depth = 30
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 456.193 ms
+------------------
+Avg Mult. time is : 91.2386ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 46628.7 ms
+------------------
+Avg Boot. time is : 23314.3ms
+avg depth = 30
+avg logq = 996
+
+
+message precision = 32
+log(poly-degree, i.e., n) = 12
+log(temporary expansion) = 2660
+log(cipher modulus, i.e., q) = 2001
+multiplicative depth = 61
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 1074.04 ms
+------------------
+Avg Mult. time is : 214.809ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 94238.6 ms
+------------------
+Avg Boot. time is : 47119.3ms
+avg depth = 61
+avg logq = 1996
+
+
+message precision = 32
+log(poly-degree, i.e., n) = 12
+log(temporary expansion) = 4660
+log(cipher modulus, i.e., q) = 4001
+multiplicative depth = 124
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 2884.02 ms
+------------------
+Avg Mult. time is : 576.805ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 229999 ms
+------------------
+Avg Boot. time is : 115000ms
+avg depth = 123
+avg logq = 3996
+
+
+message precision = 32
+log(poly-degree, i.e., n) = 12
+log(temporary expansion) = 8660
+log(cipher modulus, i.e., q) = 8001
+multiplicative depth = 249
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 8732.75 ms
+------------------
+Avg Mult. time is : 1746.55ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 705380 ms
+------------------
+Avg Boot. time is : 352690ms
+avg depth = 248
+avg logq = 7996
+
+
+
+
+
+Group 3:
+
+message precision = 32
+log(poly-degree, i.e., n) = 13
+log(temporary expansion) = 1660
+log(cipher modulus, i.e., q) = 1001
+multiplicative depth = 30
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 981.562 ms
+------------------
+Avg Mult. time is : 196.312ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 94823.4 ms
+------------------
+Avg Boot. time is : 47411.7ms
+avg depth = 30
+avg logq = 995
+
+
+message precision = 32
+log(poly-degree, i.e., n) = 13
+log(temporary expansion) = 2660
+log(cipher modulus, i.e., q) = 2001
+multiplicative depth = 61
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 2405.61 ms
+------------------
+Avg Mult. time is : 481.122ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 200266 ms
+------------------
+Avg Boot. time is : 100133ms
+avg depth = 61
+avg logq = 1995
+
+
+message precision = 32
+log(poly-degree, i.e., n) = 13
+log(temporary expansion) = 4660
+log(cipher modulus, i.e., q) = 4001
+multiplicative depth = 124
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 5927.58 ms
+------------------
+Avg Mult. time is : 1185.52ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 494547 ms
+------------------
+Avg Boot. time is : 247274ms
+avg depth = 123
+avg logq = 3995
+
+
+message precision = 32
+log(poly-degree, i.e., n) = 13
+log(temporary expansion) = 8660
+log(cipher modulus, i.e., q) = 8001
+multiplicative depth = 249
+# of packed messages = 512
+------------------
+Start Homomorphic Multiplication for 5 times
+Homomorphic Multiplication for 5 times time = 18119.9 ms
+------------------
+Avg Mult. time is : 3623.98ms
+------------------
+Start Bootstrapping for 2 times
+Bootstrapping for 2 times time = 1.54465e+06 ms
+------------------
+Avg Boot. time is : 772325ms
+avg depth = 248
+avg logq = 7995
+
